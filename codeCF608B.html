@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CF-608B</title>
+</head>
+<body>
+    <h1>C++</h1>
+    <p>#include<bits/stdc++.h>
+using namespace std;
+string a,b;
+long long ans,sum[200005];
+int main()
+{
+	cin>>a>>b;
+	for(int i=0;i<b.size();i++)sum[i+1]=sum[i]+b[i]-'0';
+	for(int i=0;i<a.size();i++)
+	{
+		if(a[i]=='0')ans+=sum[b.size()-a.size()+i+1]-sum[i];
+		else ans+=b.size()-a.size()+1-sum[b.size()-a.size()+i+1]+sum[i];
+	}
+	cout<<ans;
+	return 0;
+}</p>
+</body>
+</html>
